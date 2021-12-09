@@ -26,15 +26,35 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
 
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from 1st middleware");
+            //    await next();
+
+            //});
+            //app.Use(async (context, next) =>
+            //{
+            //    await context.Response.WriteAsync("Hello from 1st middleware");
+
+
+            //});
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.Map("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
+                });
+            });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.Map("/Raju", async context =>
+                {
+                    await context.Response.WriteAsync("Hello Raju!");
                 });
             });
         }
     }
 }
+
