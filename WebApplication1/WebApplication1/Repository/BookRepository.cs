@@ -14,7 +14,7 @@ namespace WebApplication1
         }
         public BookModel GetBookById(int id)
         {
-            return DataSource().Where(x => x.Id == id).FirstOrDefault();
+            return DataSource().Where(x => x.Id==id).FirstOrDefault();
         }
         public List<BookModel> SearchBook(string title, string author)
         {
@@ -33,5 +33,6 @@ namespace WebApplication1
 
             };
         }
+       
     }
 }

@@ -41,6 +41,7 @@ namespace WebApplication1
             //});
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             //app.UseEndpoints(endpoints =>
             //{
